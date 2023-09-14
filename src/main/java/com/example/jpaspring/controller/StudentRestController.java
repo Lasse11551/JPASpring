@@ -30,19 +30,19 @@ public class StudentRestController {
         return obj;
     }
 
-    @GetMapping("/students/{name}")
+    @GetMapping("/studentsname/{name}")
     public List<Student> getAllStudentsByName(@PathVariable String name) {
         return studentRepository.findAllByName(name);
     }
 
-    @PostMapping("/student")
+    @PostMapping("/poststudent")
     @ResponseStatus(HttpStatus.CREATED)
     public Student postStudent(@RequestBody Student student) {
         System.out.println(student);
         return studentRepository.save(student);
     }
 
-    @PutMapping("/student/{id}")
+    @PutMapping("/putstudent/{id}")
     public ResponseEntity<Student> putStudent(@PathVariable int id, @RequestBody Student student) {
         Optional<Student> orgStudent = studentRepository.findById(id);
         if (orgStudent.isPresent()) {
@@ -54,7 +54,7 @@ public class StudentRestController {
         }
     }
 
-    @DeleteMapping("/student/{id}")
+    @DeleteMapping("/deletestudent/{id}")
     public ResponseEntity<String> deleteStudent(@PathVariable int id) {
         Optional<Student> orgStudent = studentRepository.findById(id);
         if(orgStudent.isPresent()){
