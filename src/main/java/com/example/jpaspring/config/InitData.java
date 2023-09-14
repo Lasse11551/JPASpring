@@ -24,12 +24,21 @@ public class InitData implements CommandLineRunner {
         LocalDate ld = LocalDate.of(2010, 11, 12);
         LocalTime lt = LocalTime.of(10, 11, 12);
 
-
+/*
             Student s1 = new Student();
             s1.setName(name);
             s1.setBornDate(ld);
             s1.setBornTime(lt);
+
+            Student s2 = new Student();
+            s2.setName("Viktor");
+            s2.setBornDate(ld);
+            s2.setBornTime(lt);
+
             studentRepository.save(s1);
+            studentRepository.save(s2);
+
+ */
 
     }
 }
